@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A game where you divide into pieces and eat other players." />
+    <title>RISE.EXE - Vanis.io</title>
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind+Madurai:500|Nunito|Ubuntu:700|Fira+Code:600">
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+    <style>
+        html {
+            background-color: rgb(5, 5, 5);
+        }
+        body {
+            overflow: hidden;
+            padding: 0;
+            color: #dadada;
+            font-family: 'Nunito', sans-serif;
+        }
+        .loading-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #064b66;
+        }
+        .loading-screen .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hud {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+        }
+        .hud .cell-info {
+            margin-bottom: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #1cb9d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #17a2b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    <div class="hud" id="hud" style="display: none;">
+        <div class="cell-info" id="cell1Info">Cell 1: ...</div>
+        <div class="cell-info" id="cell2Info">Cell 2: ...</div>
+    </div>
+    <button class="button" id="startButton" style="display: none;">Start Game</button>
+    
+    <script src="https://raw.githubusercontent.com/PrimeVanisEXT/Prime/main/js/vendor.js"></script>
+    <script src="https://raw.githubusercontent.com/PrimeVanisEXT/Prime/main/main.js"></script>
+    <script>
+        // JavaScript to hide the loading screen and show the start button and HUD
+        window.addEventListener('load', function() {
+            document.getElementById('loadingScreen').style.display = 'none';
+            document.getElementById('startButton').style.display = 'block';
+            document.getElementById('hud').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
